@@ -3,11 +3,18 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+    limit_list = []
+    for key in recipe:
+        if key in ingredients:
+            limit_list.append(ingredients[key] // recipe[key])
+        else:
+            return 0
+    return min(limit_list)
+
 
 
 if __name__ == '__main__':
-  # Change the entries of these dictionaries to test 
+  # Change the entries of these dictionaries to test
   # your implementation with different inputs
   recipe = { 'milk': 100, 'butter': 50, 'flour': 5 }
   ingredients = { 'milk': 132, 'butter': 48, 'flour': 51 }
